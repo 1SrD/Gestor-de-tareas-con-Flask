@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Hoja de estilo propia (main.css)-->
+        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+        <!--Bootstrap con plantilla-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+
+        <!--Fuente de Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Metal+Mania&family=Waterfall&display=swap" rel="stylesheet">
+
+
+        <!--Titulo-->
+        <title>Editar tareas</title>
+    </head>
+
+        <body>
+        <main class="container p-4">
+            <h1 class="display-5 text-center mt-5 titulo"> Editar Tarea </h1>
+                 <div class="row">
+                     <div class="col-md-4 offset-md-4 my-auto"> <!--Este div ocupara 4 columnas del espacio (Centrado)-->
+                          <div class="card border-success mb-3" style="max-width: 20rem;"> <!--Creacion del objeto card-->
+                               <div class="card-header">
+                                <form action="/update/{{tarea.id}}" method="post">
+                                    <div class="form-group">
+                                         <div class="form-group">
+                                             <h5>Nombre de la tarea</h5>
+                                                <input type="text" name="nombre" placeholder="Editar Tarea" value="{{tarea.1}}" class="form-control" autofocus>
+                                             <br><br>
+                                                 <div>
+                                                     <h5>Fecha limite</h5>
+                                                     <input id="date" type="date" name="fecha" value="{{tarea.2}}" class="form-control" autofocus>
+                                                 </div>
+                                             <br><br>
+
+                                            <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                                         </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </main>
+    </body>
+</html>
